@@ -1,0 +1,30 @@
+
+
+- name: app setup
+  include_role:
+   name: common
+   tasks_from: app_setup
+
+- name: nodejs setup
+  include_role:
+   name: common
+   tasks_from: nodejs_setup
+
+- name: set mongodb repo
+  ansible.builtin.copy:
+   src: mongodb.repo
+   dest: /etc/yum.repos.d/mongo.repo
+
+- name: install mongodb client
+  ansible.builtin.dnf:
+   name: mongodb-mongosh
+   state: present
+
+- name: load the catalogue data in mongodb
+  ansible.builtin.shell: mongosh --host mongodb.srinunayak.online </app/db/master-data.js
+
+- name: systemd setup
+  include_role:
+   name: common
+   tasks_from: systemd_setup
+    
