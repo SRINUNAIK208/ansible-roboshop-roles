@@ -1,0 +1,13 @@
+  - name: install paython
+    ansible.builtin.dnf:
+     name: "{{ item }}"
+     state: present
+    loop:
+    - python3
+    - gcc
+    - python3-devel
+
+  - name: install pip dependencies
+    ansible.builtin.pip:
+     requirements: requirements.txt
+     chdir: /app
