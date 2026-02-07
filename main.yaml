@@ -1,5 +1,6 @@
 - name: comfigure {{ component }} server
-  hosts: local
+  become: yes
+  hosts: localhost
   connection: local
   roles:
   - {{ component }}
