@@ -1,1 +1,1 @@
-MONGO_HOST: mongodb.srinunayak.online
+MONGO_HOST: mongodb-{{ env }}.srinunayak.online
