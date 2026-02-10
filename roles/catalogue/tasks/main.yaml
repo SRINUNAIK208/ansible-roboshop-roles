@@ -21,7 +21,7 @@
    state: present
 
 - name: load the catalogue data in mongodb
-  ansible.builtin.shell: mongosh --host mongodb.srinunayak.online </app/db/master-data.js
+  ansible.builtin.shell: mongosh --host {{ MONGO_HOST }} </app/db/master-data.js
 
 - name: systemd setup
   include_role:
