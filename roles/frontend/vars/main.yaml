@@ -1,3 +1,4 @@
+env: dev
 CATALOGUE_HOST: catalogue.backend-{{ env }}.daws84s.site
 USER_HOST: user.backend-{{ env }}.daws84s.site
 CART_HOST: cart.backend-{{ env }}.daws84s.site
